@@ -30,7 +30,8 @@ export default function formatEvent(attributes = {}) {
     categories,
     organizer,
     attendees,
-    alarms
+    alarms,
+    comment
   } = attributes
 
   let icsFormat = ''
@@ -64,8 +65,8 @@ export default function formatEvent(attributes = {}) {
   icsFormat += status ? (foldLine(`STATUS:${status}`) + '\r\n') : ''
   icsFormat += categories ? (foldLine(`CATEGORIES:${categories}`) + '\r\n') : ''
   icsFormat += organizer ? (foldLine(`ORGANIZER;${setOrganizer(organizer)}`) + '\r\n') : ''
-  icsFormat += ('COMMENT:' + 'test comment' + '\r\n');
-  icsFormat += ('X-SOURCEMED-THERAPYSOURCE-EVENTTYPE:' + 'BLOCK' + '\r\n')
+  icsFormat += (foldLine(`COMMENTS:${comment}`) + '\r\n');
+  icsFormat += ('X-SOURCEMED-THERAPYSOURCE-EVENTTYPE:' + 'BLOCK' + '\r\n');
 
   if (attendees) {
     attendees.map(function (attendee) {
