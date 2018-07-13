@@ -43,6 +43,8 @@ const alarmSchema = Joi.object().keys({
   'iana-prop': Joi.any()
 })
 
+const commentSchema = Joi.string();
+
 const schema = Joi.object().keys({
   timestamp: Joi.any(),
   title: Joi.string(),
@@ -61,7 +63,8 @@ const schema = Joi.object().keys({
   categories: Joi.array().items(Joi.string()),
   organizer: organizerSchema,
   attendees: Joi.array().items(contactSchema),
-  alarms: Joi.array().items(alarmSchema)
+  alarms: Joi.array().items(alarmSchema),
+  comment: commentSchema,
 }).xor('end', 'duration')
 
 export default function validateEvent(candidate) {
