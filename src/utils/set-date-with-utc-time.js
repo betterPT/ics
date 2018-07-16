@@ -25,10 +25,10 @@ export default function setDateWithUTCtime(args = []) {
       hours,
       minutes,
       seconds
-    ]).utc().format('YYYYMMDDTHHmm00') + 'Z'
+    ]).utc().format('YYYYMMDDTHHmm00')
 
     return formattedDate
   }
 
-  return moment().utc().format('YYYYMMDDTHHmm00') + 'Z'
+  return moment().utc().format('YYYYMMDDTHHmm00')
 }
