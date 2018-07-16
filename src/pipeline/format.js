@@ -65,7 +65,7 @@ export default function formatEvent(attributes = {}) {
   icsFormat += status ? (foldLine(`STATUS:${status}`) + '\r\n') : ''
   icsFormat += categories ? (foldLine(`CATEGORIES:${categories}`) + '\r\n') : ''
   icsFormat += organizer ? (foldLine(`ORGANIZER:${organizer}`) + '\r\n') : ''
-  icsFormat += (foldLine(`COMMENTS:${comment}`) + '\r\n');
+  icsFormat += (foldLine(`COMMENT:${comment}`) + '\r\n');
   icsFormat += ('X-SOURCEMED-THERAPYSOURCE-EVENTTYPE:' + 'BLOCK' + '\r\n');
 
   if (attendees) {
