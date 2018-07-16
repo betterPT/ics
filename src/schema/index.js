@@ -24,10 +24,7 @@ const contactSchema = Joi.object().keys({
   rsvp: Joi.boolean()
 })
 
-const organizerSchema = Joi.object().keys({
-  name: Joi.string(),
-  email: Joi.string().email()
-})
+const organizerSchema = Joi.string(); 
 
 const alarmSchema = Joi.object().keys({
   action: Joi.string().regex(/audio|display|email/).required(),

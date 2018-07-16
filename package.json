@@ -1,6 +1,6 @@
 {
   "name": "@betterpt/ics",
-  "version": "2.6.8",
+  "version": "2.7.0",
   "description": "iCal (ics) file generator",
   "main": "index.js",
   "scripts": {
